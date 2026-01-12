@@ -47,40 +47,94 @@ As an example,
 * Who is the server
 * How communication happens between them
 
-The Client-Server Model is a distributed architecture where clients request services and servers provide them. It underpins many modern systems, including websites, email, and cloud storage platforms.
+##### Ans. The Client-Server Model is a distributed architecture where clients request services and servers provide them. It underpins many modern systems, including websites, email, and cloud storage platforms.
 
-How Does the Client-Server Model Work?
-Client: A client is any device or software that initiates communication by requesting data or services from a server. Common client applications include:
+##### How Does the Client-Server Model Work?
+**Client:** A client is any device or software that initiates communication by requesting data or services from a server. Common client applications include:
 
-Web browsers (e.g., Chrome, Firefox)
+* Web browsers (e.g., Chrome, Firefox)
+* Email apps (e.g., Gmail, Outlook)
 
-Email apps (e.g., Gmail, Outlook)
+**Server:** A server is a powerful systems that listens for and responds to client requests by delivering data or performing tasks. Servers often handle multiple simultaneous client requests. Common server applications include:
 
-Server: A server is a powerful systems that listens for and responds to client requests by delivering data or performing tasks. Servers often handle multiple simultaneous client requests. Common server applications include:
+* Web Servers (e.g., Apache, Nginx)
+* Email Servers
+* Database servers
 
-Web Servers (e.g., Apache, Nginx)
-Email Servers
-Database servers
-Client-Server-Model
-Client Server Model
-How the Browser Interacts With the Servers?
+![Client Server Model](https://media.geeksforgeeks.org/wp-content/uploads/20240419170238/Client-Server-Model.webp)
+
+##### How the Browser Interacts With the Servers?
 The process of interacting with servers through a browser involves several steps:
 
 1. User Enters the URL (Uniform Resource Locator):
 The user types a website address (e.g., www.example.com) into the browser's address bar.
-
 2. DNS (Domain Name System) Lookup:
 The browser contacts a DNS server to convert the domain into an IP address.
-
 3. Establishing a Connection:
 The browser sends an HTTP/HTTPS request to the server using the resolved IP address.
-
 4. Server Responds:
 The server sends back website files (HTML, CSS, JavaScript, images).
-
 5. Browser Renders the Webpage
+* DOM interpreter: Processes HTML to structure the page.
+* CSS interpreter: Applies styles
+* JavaScript Engine: Adds interactivity (using JIT compilation for performance).
 
-DOM interpreter: Processes HTML to structure the page.
-CSS interpreter: Applies styles
-JavaScript Engine: Adds interactivity (using JIT compilation for performance).
-Client-Server-Model
+![Client Server Request and Response](https://media.geeksforgeeks.org/wp-content/uploads/20231128175510/Client-Server-Model-2.png)
+
+# Q5. Three-Tier Architecture
+### What is 3-Tier Architecture in web applications? Explain each layer:
+
+* Presentation Layer
+* Application (Business) Layer
+* Data Layer
+* Also mention why this architecture is used.
+
+###### Ans. The 3-tier architecture is a client-server architecture that separates the user interface, application processing, and data management into three distinct tiers or layers. The 3-tier architecture is widely used in modern web applications and enterprise systems because it offers scalability, flexibility, and security. Here is a brief description of each tier in the 3-tier architecture:
+
+* Presentation Tier (User Interface Layer)
+* Application Tier (Business Logic Layer)
+* Data Management Tier (Database Layer)
+
+
+![Three-tier architecture in web development](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*WggW_vCVv0trIbBfMGnZ1g.png)
+
+1. Presentation Layer (Client Layer):
+
+This layer is what users interact with directly. Its primary responsibility is to present data to the user in a human-readable format and to capture user input. The presentation layer doesn’t contain much business logic; its main job is to display information and handle user interactions.
+* This layer represents the interface through which users interact with the application.
+* It includes components like web browsers, mobile apps, or desktop applications.
+* Its main purpose is to present data to users and to capture user input.
+* Technologies used in this layer include HTML, CSS, Frontend Frameworks and Libraries: React, Angular, Vue.js, etc.
+
+2. Application Layer (Server-Side Layer):
+
+This layer acts as the middleman between the presentation layer and the data layer. It contains the core business logic of the application, including processing user requests, executing business rules, and coordinating with the data layer to fetch or store data.
+* Technologies Used:
+    - Server-side Programming Languages: Python, Java, C#, PHP, Node.js, etc.
+    - Frameworks and Libraries: Django, Flask, Spring (Java), ASP.NET (C#), Express.js (Node.js), etc.
+    - Middleware: Connects the presentation layer with the data layer and processes requests (e.g., Express.js middleware in Node.js).
+
+3. Data Layer (Backend Layer):
+
+This layer is responsible for managing the storage and retrieval of data. It stores the application’s data and provides mechanisms to access and manipulate that data.
+* It includes databases and any other data storage mechanisms.
+* It responds to requests from the application layer by retrieving or modifying data.
+* Technologies Used:
+    - Databases: MySQL, PostgreSQL, SQL Server, Oracle, MongoDB, etc.
+
+# Q6. JavaScript as a Backend Language
+### Why is JavaScript used as a backend language? Explain with points such as:
+
+* Performance
+* Ecosystem
+* Popular backend frameworks
+
+##### Ans. Backend development refers to the "behind the scenes" work of a website or application. It includes managing databases, handling client requests, performing business logic, and sending responses back to the frontend. It is essential for making the website functional and responsive to user interactions.
+
+JavaScript has become popular for backend development due to several reasons:
+
+* Using JavaScript for both frontend and backend development allows for code reusability, as developers can share code between the client and server and also reduces development time.
+* JavaScript's asynchronous programming model allows backend applications to handle multiple tasks concurrently without blocking the execution thread. 
+* JavaScript has a vast and vibrant ecosystem with a plethora of libraries, frameworks, and tools tailored for backend development.
+* It also provides popular backend frameworks like Node.js, Express.js.
+
