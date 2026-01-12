@@ -95,7 +95,6 @@ The server sends back website files (HTML, CSS, JavaScript, images).
 * Application Tier (Business Logic Layer)
 * Data Management Tier (Database Layer)
 
-
 ![Three-tier architecture in web development](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*WggW_vCVv0trIbBfMGnZ1g.png)
 
 1. Presentation Layer (Client Layer):
