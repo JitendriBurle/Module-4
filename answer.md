@@ -27,7 +27,7 @@
 * Node.js is a runtime environment for javascript allowing backend developers to use the same language across both the frontend and backend.
 * SQL is a database system which is used to store, organize, and manage data that is used by the application. 
 
-[Frontend + Backend](https://frontendmasters.com/guides/front-end-handbook/2016/images/what-is-front-end-dev.png)
+![Frontend + Backend](https://frontendmasters.com/guides/front-end-handbook/2016/images/what-is-front-end-dev.png)
 
 # Q3. Business Logic
 ### Q. What is Business Logic? Explain in detail and give at least 3 real-world examples where business logic is applied in a web application.
