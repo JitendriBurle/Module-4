@@ -1,0 +1,42 @@
+-- CREATE
+CREATE TABLE students (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  age INTEGER,
+  course TEXT,
+  created_at TIMESTAMP
+);
+
+-- INSERT
+INSERT INTO students(name, email, age, course)
+VALUES 
+('Ravi', 'ravi@gmail.com', 20, 'Computer Science'),
+('Karthik', 'karthik@gmail.com', 21, 'AIML'),
+('Pooja', 'pooja@gmail.com', 20, 'Electronics'),
+('Swetha', 'swetha@gmail.com', 19, 'Computer Science'),
+('Joshitha', 'joshitha@gmail.com', 22, 'Computer Science'),
+('Deepika', 'deepika@gmail.com', 19, 'Civil'),
+('Kavita', 'kavita@gmail.com', 23, 'Information Technology');
+
+-- READ
+SELECT * FROM students;
+SELECT * FROM students WHERE age > 20;
+SELECT name, email FROM students;
+SELECT * FROM students WHERE course = 'Computer Science';
+
+-- UPDATE
+UPDATE students
+SET age = 21
+WHERE name = 'Ravi';
+
+UPDATE students
+SET course = 'Data Science'
+WHERE course = 'Information Technology';
+
+-- DELETE
+DELETE FROM students WHERE age < 20;
+DELETE FROM students WHERE id = 5;
+
+-- FINAL CHECK
+SELECT * FROM students;
