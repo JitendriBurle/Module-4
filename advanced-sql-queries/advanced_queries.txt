@@ -1,0 +1,98 @@
+-- CREATE
+CREATE TABLE students (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  age INTEGER,
+  course TEXT,
+  created_at TIMESTAMP
+);
+
+-- INSERT
+INSERT INTO students(name, email, age, course)
+VALUES 
+('Ravi', 'ravi@gmail.com', 20, 'Computer Science'),
+('Karthik', 'karthik@gmail.com', 21, 'AIML'),
+('Pooja', 'pooja@gmail.com', 20, 'Electronics'),
+('Swetha', 'swetha@gmail.com', 19, 'Computer Science'),
+('Joshitha', 'joshitha@gmail.com', 22, 'Computer Science'),
+('Deepika', 'deepika@gmail.com', 19, 'Civil'),
+('Kavita', 'kavita@gmail.com', 23, 'Information Technology');
+
+-- READ
+SELECT * FROM students;
+SELECT * FROM students WHERE age > 20;
+SELECT name, email FROM students;
+SELECT * FROM students WHERE course = 'Computer Science';
+
+-- UPDATE
+UPDATE students
+SET age = 21
+WHERE name = 'Ravi';
+
+UPDATE students
+SET course = 'Data Science'
+WHERE course = 'Information Technology';
+
+-- DELETE
+DELETE FROM students WHERE age < 20;
+DELETE FROM students WHERE id = 5;
+
+--COUNT
+SELECT COUNT(*) AS total_students
+FROM students;
+
+--AVERAGE
+SELECT AVG(age) AS average_age
+FROM students;
+
+--MAXIMUM AND MINIMUM
+SELECT 
+  MIN(age) AS min_age,
+  MAX(age) AS max_age
+FROM students;
+
+--COUNT IN EACH COURSE
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+--COUNT OF STUDENTS GREATER THAN 20
+SELECT COUNT(*) AS students_above_20
+FROM students
+WHERE age > 20;
+
+--COURSE WISE STUDENT COUNT
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+--COURSES WHERE STUDENT COUNT > 1
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course
+HAVING COUNT(*) > 1;
+
+--HIGHEST STUDENT COMES FIRST
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course
+ORDER BY student_count DESC;
+
+--LATEST THREE STUDENTS
+SELECT *
+FROM students
+ORDER BY created_at DESC
+LIMIT 3;
+
+--FIVE OLDEST STUDENTS
+SELECT *
+FROM students
+ORDER BY age DESC
+LIMIT 5;
+
+--COURSE SORTED BY AGE
+SELECT *
+FROM students
+WHERE course = 'Computer Science'
+ORDER BY age DESC;
