@@ -9,6 +9,6 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/customers', customerRoutes);
-app.use('api/orders', orderRoutes);
+app.use('/api/orders', orderRoutes);
 
 module.exports = app;
