@@ -8,7 +8,7 @@ exports.registerCustomer = async (req, res) => {
     }
 
     const { data: existing } = await supabase
-    .form('customers')
+    .from('customers')
     .select('id')
     .eq('email', email)
     .single();
