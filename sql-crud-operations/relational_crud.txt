@@ -1,0 +1,72 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  amount INTEGER,
+  status TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO users (name, email) VALUES
+('Ravi', 'ravi@gmail.com'),
+('Karthik', 'karthik@gmail.com'),
+('Pooja', 'pooja@gmail.com'),
+('Amit', 'amit@gmail.com'),
+('Neha', 'neha@gmail.com');
+
+INSERT INTO orders (user_id, amount, status) VALUES
+(1, 500, 'pending'),
+(1, 1200, 'completed'),
+(1, 300, 'completed'),
+(2, 700, 'pending'),
+(2, 400, 'completed'),
+(3, 1500, 'pending'),
+(4, 900, 'completed'),
+(5, 200, 'pending'),
+(5, 800, 'completed');
+
+SELECT * FROM users;
+
+SELECT * FROM orders;
+
+SELECT * FROM orders WHERE user_id = 1;
+
+SELECT u.name, COUNT(o.id) 
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.name
+HAVING COUNT(o.id) > 1;
+
+SELECT u.name, SUM(o.amount) 
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.name;
+
+UPDATE users 
+SET email = 'ravi_new@gmail.com' 
+WHERE id = 1;
+
+UPDATE orders 
+SET status = 'completed' 
+WHERE user_id = 2;
+
+UPDATE orders 
+SET amount = 1000 
+WHERE id = 4;
+
+DELETE FROM orders WHERE id = 9;
+
+DELETE FROM orders WHERE user_id = 3;
+
+DELETE FROM users WHERE id = 1;
+
+-- Why should orders not be stored inside the users table?
+
+--Orders should not be stored inside the users table because users may have many orders. It breaks normalizations and causes duplication of data.
+--Separate tables using foreign keys assures data integrity.
